@@ -93,7 +93,10 @@ class DrawerSidebar extends PureComponent<void, Props, void> {
           routeName: route.routes[0].routeName,
         });
       }
-      this.props.navigation.navigate(route.routeName, undefined, subAction);
+      // this.props.navigation.navigate(route.routeName, undefined, subAction);
+      if (route.routeName != this.props.navigation.state.routes[this.props.navigation.state.index].routeName) {
+        this.props.navigation.navigate(route.routeName, undefined, subAction);     
+      }
     }
   };
 
